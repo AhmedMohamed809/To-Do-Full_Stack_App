@@ -1,11 +1,12 @@
 import React ,{Fragment ,useEffect , useState} from 'react'
 
 function ListTodo() {
+    const [todos,setTodo] = useState([]);
     const getTodos = async()=>{
         try {
             const response = await fetch("http://localhost:5000/todos");
             const data =await response.json();
-            console.log(data)
+            setTodo(data);
         } catch (err) {
             console.error(err.message);
             
@@ -14,10 +15,10 @@ function ListTodo() {
     }
     useEffect(()=>{
         getTodos();
-    })
+    },[])
   return (
     <Fragment>
-        <table class="table mt-5 table-dark table-hover">
+        <table class="table mt-5  table-hover">
   <thead>
     <tr>
       
@@ -27,12 +28,14 @@ function ListTodo() {
     </tr>
   </thead>
   <tbody>
-    
+    {todos.map(todo=>(
+
     <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{todo.description}</td>
+      <td>Edit</td>
+      <td>Delete</td>
     </tr>
+    ))}
     
   </tbody>
 </table>
