@@ -11,7 +11,7 @@ function InputTodo() {
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             });
-            console.log(response);
+            window.location ="/"; // refresh the page 
          } catch (err) {
             console.error(err.massage);
         }
