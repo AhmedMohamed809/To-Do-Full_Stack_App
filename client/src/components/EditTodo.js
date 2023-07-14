@@ -24,14 +24,15 @@ try {
 </button>
 
 
-<div class="modal" id={`id${todo.todo_id}`}>
+<div class="modal" id={`id${todo.todo_id}`} onClick={()=>setDescription(todo.description)}>
   <div class="modal-dialog">
     <div class="modal-content">
 
       
       <div class="modal-header">
         <h4 class="modal-title">Edit Todo</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+         onClick={()=>setDescription(todo.description)}></button>
       </div>
 
       <div class="modal-body">
@@ -45,7 +46,7 @@ try {
       data-bs-dismiss="modal"
       onClick={e=>updataDescription(e)}>Edit</button>
 
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onClick={()=>setDescription(todo.description)}>Close</button>
       </div>
 
     </div>
