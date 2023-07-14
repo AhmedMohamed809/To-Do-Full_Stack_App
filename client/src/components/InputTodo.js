@@ -23,6 +23,7 @@ function InputTodo() {
             <input type='text' className='form-control' 
             value={description} 
             onChange={e=>setDescription(e.target.value)}
+            placeholder='input'
             />
             <button className='btn btn-success'>Add</button>
         </form>
