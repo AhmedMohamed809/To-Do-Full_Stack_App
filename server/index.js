@@ -5,7 +5,7 @@ const pool = require("./db")
 //middleware 
 app.use(cors());
 app.use(express.json()); // req.body
-
+let port = process.env.PORT|| 5000;
 // Routes//
 
 //create todo 
@@ -65,6 +65,6 @@ app.delete("/todos/:id",async (req,res)=>{
     }
 })
 //
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log("server has started >> port 5000 ");
 })

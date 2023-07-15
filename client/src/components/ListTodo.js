@@ -9,7 +9,7 @@ function ListTodo() {
         const deleteTodo = await fetch(`http://localhost:5000/todos/${id}`,{
           method : "DELETE"
         });
-        // window.location ="/";
+        
         setTodo(todos.filter(todo => todo.todo_id !== id ));
       } catch (err) {
         console.error(err.message)
