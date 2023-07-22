@@ -36,13 +36,13 @@ try {
       </div>
 
       <div class="modal-body">
-        <input type='text' className='form-control' value={description}
+        <input type='text' className='form-control edit-form'  value={description}
          onChange={ e=>setDescription(e.target.value)}/>
       </div>
 
       
       <div class="modal-footer">
-      <button type="button" class="btn btn-warning" 
+      <button type="button" class="btn btn-warning edit-button" 
       data-bs-dismiss="modal"
       onClick={e=>updataDescription(e)}>Edit</button>
 
