@@ -6,7 +6,7 @@ function InputTodo() {
         e.preventDefault();
         try {
             const body = {description};
-            const response = await fetch("/todos",{
+            const response = await fetch("https://server-todo-v1.onrender.com/todos",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)

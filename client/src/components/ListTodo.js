@@ -6,7 +6,7 @@ function ListTodo() {
     // delete  todo function
     const deleteTodo = async (id) => {
       try {
-        const deleteTodo = await fetch(`/todos/${id}`,{
+        const deleteTodo = await fetch(`https://server-todo-v1.onrender.com/todos/${id}`,{
           method : "DELETE"
         });
         
@@ -18,7 +18,7 @@ function ListTodo() {
     } 
     const getTodos = async()=>{
         try {
-            const response = await fetch("/todos");
+            const response = await fetch("https://server-todo-v1.onrender.com/todos");
             const data =await response.json();
             setTodo(data);
         } catch (err) {
