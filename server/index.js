@@ -10,7 +10,7 @@ let port = process.env.PORT|| 5000;
 // Routes//
 
 //create todo 
-app.post("https://server-todo-v1.onrender.com/todos",async(req,res)=>{
+app.post("/todos",async(req,res)=>{
 try {
     const {description}=req.body;
     const newTodo= await pool.query(
@@ -23,7 +23,7 @@ try {
 }
 })
 // get all todo 
-app.get("https://server-todo-v1.onrender.com/todos",async(req,res)=>{
+app.get("/todos",async(req,res)=>{
     try {
 
         const alltodo = await pool.query("SELECT * FROM todo");
@@ -35,7 +35,7 @@ app.get("https://server-todo-v1.onrender.com/todos",async(req,res)=>{
 } )
 
 //get a todo
-app.get("https://server-todo-v1.onrender.com/todos/:id", async (req,res)=>{
+app.get("/todos/:id", async (req,res)=>{
     try {
         const todoID =Number(req.params.id);
         const filterTodo= await pool.query("SELECT * FROM todo WHERE todo_id= $1",[todoID]);
@@ -45,7 +45,7 @@ app.get("https://server-todo-v1.onrender.com/todos/:id", async (req,res)=>{
     }
 })
 //update a todo 
-app.put("https://server-todo-v1.onrender.com/todos/:id",async (req,res)=>{
+app.put("/todos/:id",async (req,res)=>{
     try {
         const {id} = req.params;
         const {description} = req.body;
@@ -56,7 +56,7 @@ app.put("https://server-todo-v1.onrender.com/todos/:id",async (req,res)=>{
     }
 })
 //delete a todo
-app.delete("https://server-todo-v1.onrender.com/todos/:id",async (req,res)=>{
+app.delete("/todos/:id",async (req,res)=>{
     try {
         const {id} = req.params;
         const deleteTodo = await pool.query("DELETE FROM todo WHERE todo_id = $1",[id]);
