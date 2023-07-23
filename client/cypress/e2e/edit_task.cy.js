@@ -2,7 +2,7 @@
 describe("Todo App - edit Task", () => {
     beforeEach(() => {
       // Assuming your todo app is hosted at http://localhost:3000
-      cy.visit("http://localhost:3000");
+      cy.visit("https://todo-app-v1-aqbn.onrender.com/");
     });
   
     it("should edit a task to the todo list", () => {
