@@ -25,7 +25,7 @@ describe("Todo App - delete Task", () => {
 
   it("should add  and delete a task to the todo list", () => {
     const taskName = "buy new car"; // Replace this with the task you want to add
-
+    // cy.get('.form-control').clear();
     // Find the input field and type the task name
     cy.get(".form-control").type(taskName);
 
